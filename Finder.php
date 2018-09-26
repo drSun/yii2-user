@@ -99,9 +99,11 @@ class Finder extends BaseObject
      *
      * @return models\User
      */
-    public function findUserById($id)
+    public function findUserById($id, $exludedStatus = 'st_uns')
     {
-        return $this->findUser(['id' => $id])->one();
+        return $this->findUser(['id' => $id])
+            ->andFilterWhere(['!=', 'status', $exludedStatus])
+            ->one();
     }
 
     /**
@@ -111,9 +113,11 @@ class Finder extends BaseObject
      *
      * @return models\User
      */
-    public function findUserByUsername($username)
+    public function findUserByUsername($username, $exludedStatus = 'st_uns')
     {
-        return $this->findUser(['username' => $username])->one();
+        return $this->findUser(['username' => $username])
+            ->andFilterWhere(['!=', 'status', $exludedStatus])
+            ->one();
     }
 
     /**
@@ -123,9 +127,11 @@ class Finder extends BaseObject
      *
      * @return models\User
      */
-    public function findUserByEmail($email)
+    public function findUserByEmail($email, $exludedStatus = 'st_uns')
     {
-        return $this->findUser(['email' => $email])->one();
+        return $this->findUser(['email' => $email])
+            ->andFilterWhere(['!=', 'status', $exludedStatus])
+            ->one();
     }
 
     /**
