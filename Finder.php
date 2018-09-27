@@ -100,7 +100,7 @@ class Finder extends BaseObject
      *
      * @return models\User
      */
-    public function findUserById($id, $exludedStatus = User::STATUS_UNSUBSCRIBE)
+    public function findUserById($id, $exludedStatus = User::STATUS_UNSUBSCRIBED)
     {
         return $this->findUser(['id' => $id])
             ->andFilterWhere(['!=', 'status', $exludedStatus])
@@ -114,7 +114,7 @@ class Finder extends BaseObject
      *
      * @return models\User
      */
-    public function findUserByUsername($username, $exludedStatus = User::STATUS_UNSUBSCRIBE)
+    public function findUserByUsername($username, $exludedStatus = User::STATUS_UNSUBSCRIBED)
     {
         return $this->findUser(['username' => $username])
             ->andFilterWhere(['!=', 'status', $exludedStatus])
@@ -128,7 +128,7 @@ class Finder extends BaseObject
      *
      * @return models\User
      */
-    public function findUserByEmail($email, $exludedStatus = User::STATUS_UNSUBSCRIBE)
+    public function findUserByEmail($email, $exludedStatus = User::STATUS_UNSUBSCRIBED)
     {
         return $this->findUser(['email' => $email])
             ->andFilterWhere(['!=', 'status', $exludedStatus])
