@@ -68,6 +68,24 @@ class User extends ActiveRecord implements IdentityInterface
     const BEFORE_CONFIRM  = 'beforeConfirm';
     const AFTER_CONFIRM   = 'afterConfirm';
 
+    const STATUS_ACTIVE = 'st_act';
+    const STATUS_BAD_EMAIL = 'st_bml';
+    const STATUS_DELETED = 'st_del';
+    const STATUS_NON_VALIDATED = 'st_nvl';
+    const STATUS_SLEEPING = 'st_slp';
+    const STATUS_OTHER = 'st_oth';
+    const STATUS_UNSUBSCRIBED = 'st_uns';
+
+    public static $statuses = [
+        self::ST_ACTIVE => 'Active',
+        self::ST_BAD_EMAIL => 'Bad Email',
+        self::ST_DELETED => 'Deleted',
+        self::ST_NON_VALIDATED => 'Non Validated',
+        self::ST_SLEEPING => 'Sleeping',
+        self::ST_OTHER => 'Other',
+        self::ST_UNSUBSCRIBED => 'Unsubscribed',
+    ];
+
     // following constants are used on secured email changing process
     const OLD_EMAIL_CONFIRMED = 0b1;
     const NEW_EMAIL_CONFIRMED = 0b10;

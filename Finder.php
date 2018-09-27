@@ -13,6 +13,7 @@ namespace dektrium\user;
 
 use dektrium\user\models\query\AccountQuery;
 use dektrium\user\models\Token;
+use dektrium\user\models\User;
 use yii\authclient\ClientInterface;
 use yii\base\BaseObject;
 use yii\db\ActiveQuery;
@@ -99,7 +100,7 @@ class Finder extends BaseObject
      *
      * @return models\User
      */
-    public function findUserById($id, $exludedStatus = 'st_uns')
+    public function findUserById($id, $exludedStatus = User::STATUS_UNSUBSCRIBE)
     {
         return $this->findUser(['id' => $id])
             ->andFilterWhere(['!=', 'status', $exludedStatus])
@@ -113,7 +114,7 @@ class Finder extends BaseObject
      *
      * @return models\User
      */
-    public function findUserByUsername($username, $exludedStatus = 'st_uns')
+    public function findUserByUsername($username, $exludedStatus = User::STATUS_UNSUBSCRIBE)
     {
         return $this->findUser(['username' => $username])
             ->andFilterWhere(['!=', 'status', $exludedStatus])
@@ -127,7 +128,7 @@ class Finder extends BaseObject
      *
      * @return models\User
      */
-    public function findUserByEmail($email, $exludedStatus = 'st_uns')
+    public function findUserByEmail($email, $exludedStatus = User::STATUS_UNSUBSCRIBE)
     {
         return $this->findUser(['email' => $email])
             ->andFilterWhere(['!=', 'status', $exludedStatus])
