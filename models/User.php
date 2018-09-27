@@ -77,13 +77,13 @@ class User extends ActiveRecord implements IdentityInterface
     const STATUS_UNSUBSCRIBED = 'st_uns';
 
     public static $statuses = [
-        self::ST_ACTIVE => 'Active',
-        self::ST_BAD_EMAIL => 'Bad Email',
-        self::ST_DELETED => 'Deleted',
-        self::ST_NON_VALIDATED => 'Non Validated',
-        self::ST_SLEEPING => 'Sleeping',
-        self::ST_OTHER => 'Other',
-        self::ST_UNSUBSCRIBED => 'Unsubscribed',
+        self::STATUS_ACTIVE => 'Active',
+        self::STATUS_BAD_EMAIL => 'Bad Email',
+        self::STATUS_DELETED => 'Deleted',
+        self::STATUS_NON_VALIDATED => 'Non Validated',
+        self::STATUS_SLEEPING => 'Sleeping',
+        self::STATUS_OTHER => 'Other',
+        self::STATUS_UNSUBSCRIBED => 'Unsubscribed',
     ];
 
     // following constants are used on secured email changing process
