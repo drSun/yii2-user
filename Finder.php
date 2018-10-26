@@ -11,6 +11,7 @@
 
 namespace dektrium\user;
 
+use dektrium\user\models\enums\UserStatusEnum;
 use dektrium\user\models\query\AccountQuery;
 use dektrium\user\models\Token;
 use dektrium\user\models\User;
@@ -100,7 +101,7 @@ class Finder extends BaseObject
      *
      * @return models\User
      */
-    public function findUserById($id, $exludedStatus = User::STATUS_UNSUBSCRIBED)
+    public function findUserById($id, $exludedStatus = UserStatusEnum::STATUS_UNSUBSCRIBED)
     {
         return $this->findUser(['id' => $id])
             ->andFilterWhere(['!=', 'status', $exludedStatus])
@@ -114,7 +115,7 @@ class Finder extends BaseObject
      *
      * @return models\User
      */
-    public function findUserByUsername($username, $exludedStatus = User::STATUS_UNSUBSCRIBED)
+    public function findUserByUsername($username, $exludedStatus = UserStatusEnum::STATUS_UNSUBSCRIBED)
     {
         return $this->findUser(['username' => $username])
             ->andFilterWhere(['!=', 'status', $exludedStatus])
@@ -128,7 +129,7 @@ class Finder extends BaseObject
      *
      * @return models\User
      */
-    public function findUserByEmail($email, $exludedStatus = User::STATUS_UNSUBSCRIBED)
+    public function findUserByEmail($email, $exludedStatus = UserStatusEnum::STATUS_UNSUBSCRIBED)
     {
         return $this->findUser(['email' => $email])
             ->andFilterWhere(['!=', 'status', $exludedStatus])
