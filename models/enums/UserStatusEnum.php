@@ -1,5 +1,5 @@
 <?php
-namespace app\models\enums;
+namespace dektrium\user\models\enums;
 
 /**
  * Class UserStatusEnum
