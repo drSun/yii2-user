@@ -23,7 +23,6 @@ use yii\web\Application as WebApplication;
 use yii\web\IdentityInterface;
 use yii\helpers\ArrayHelper;
 
-
 /**
  * User ActiveRecord model.
  *
@@ -68,12 +67,19 @@ class User extends ActiveRecord implements IdentityInterface
     const BEFORE_CONFIRM  = 'beforeConfirm';
     const AFTER_CONFIRM   = 'afterConfirm';
 
+    /* @deprecated */
     const STATUS_ACTIVE = 'st_act';
+    /* @deprecated */
     const STATUS_BAD_EMAIL = 'st_bml';
+    /* @deprecated */
     const STATUS_DELETED = 'st_del';
+    /* @deprecated */
     const STATUS_NON_VALIDATED = 'st_nvl';
+    /* @deprecated */
     const STATUS_SLEEPING = 'st_slp';
+    /* @deprecated */
     const STATUS_OTHER = 'st_oth';
+    /* @deprecated */
     const STATUS_UNSUBSCRIBED = 'st_uns';
 
     public static $statuses = [
