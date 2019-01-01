@@ -33,10 +33,11 @@ class Token extends ActiveRecord
 {
     use ModuleTrait;
 
-    const TYPE_CONFIRMATION      = 0;
-    const TYPE_RECOVERY          = 1;
+    const TYPE_CONFIRMATION = 0;
+    const TYPE_RECOVERY = 1;
     const TYPE_CONFIRM_NEW_EMAIL = 2;
     const TYPE_CONFIRM_OLD_EMAIL = 3;
+    const TYPE_CONFIRM_PROFILE_DELETION = 4;
 
     /**
      * @return \yii\db\ActiveQuery
